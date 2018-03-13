@@ -18,6 +18,12 @@ public class MainPresenter implements MainContract.MPresenter {
         view = null;
     }
 
+
+    /**
+     * Makes sure the string isn't empty
+     * @param s A string to check
+     * @return
+     */
     @Override
     public boolean checkString(String s) {
         if(s.equals("")){

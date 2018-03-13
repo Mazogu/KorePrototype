@@ -5,5 +5,9 @@ package com.example.micha.remotekodi;
  */
 
 public interface BaseView {
+    /**
+     * Gives the view an error message to display.
+     * @param s String to show
+     */
     void showError(String s);
 }

@@ -5,6 +5,15 @@ package com.example.micha.remotekodi;
  */
 
 public interface BasePresenter<V extends BaseView> {
+
+    /**
+     * Attaches a view to communicate with.
+     * @param view View to attach
+     */
     void attachView(V view);
+
+    /**
+     * Removes attached view.
+     */
     void detachView();
 }

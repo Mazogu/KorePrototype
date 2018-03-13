@@ -25,6 +25,10 @@ public class MainActivity extends AppCompatActivity implements MainContract.MVie
         presenter.attachView(this);
     }
 
+    /**
+     * The onclick method for the button. Makes sure the fields aren't empty. Starts the next activity if they aren't.
+     * @param view the button.
+     */
     public void connect(View view) {
         String ip = ipAddress.getText().toString();
         String portAccess = port.getText().toString();
