@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="selection">
+        <item>@string/remote_mode</item>
+        <item>@string/movie_mode</item>
+        <item>@string/tv_mode</item>
+        <item>@string/music_mode</item>
+        <item>@string/favorites_mode</item>
+    </string-array>
+</resources>

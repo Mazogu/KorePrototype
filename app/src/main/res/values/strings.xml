@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">RemoteKodi</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="drawer_open">Drawer\'s Open</string>
+    <string name="drawer_closed">Drawer\'s Closed</string>
+    <string name="nav">Navigate</string>
+    <string name="remote_mode">Remote</string>
+    <string name="movie_mode">Movies</string>
+    <string name="tv_mode">TV shows</string>
+    <string name="music_mode">Music</string>
+    <string name="favorites_mode">Favorites</string>
 </resources>

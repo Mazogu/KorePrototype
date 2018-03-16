@@ -1,10 +1,13 @@
-package com.example.micha.remotekodi.main.utils;
+package com.example.micha.remotekodi.utils;
 
-import java.lang.ref.SoftReference;
+import com.example.micha.remotekodi.model.music.Music;
+import com.example.micha.remotekodi.model.players.Players;
+import com.example.micha.remotekodi.model.playlist.Playlist;
 
 import io.reactivex.Observable;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
+import retrofit2.converter.gson.GsonConverterFactory;
 import retrofit2.converter.scalars.ScalarsConverterFactory;
 import retrofit2.http.GET;
 import retrofit2.http.Query;
@@ -28,6 +31,12 @@ public class RetrofitHelper {
                     .addConverterFactory(ScalarsConverterFactory.create())
                     .baseUrl(url).build();
         }
+
+        public static Retrofit getObjectRetrofit(String url){
+            return new Retrofit.Builder().addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+                    .addConverterFactory(GsonConverterFactory.create())
+                    .baseUrl(url).build();
+        }
     }
 
     /**
@@ -36,9 +45,24 @@ public class RetrofitHelper {
      * @param request Jsonrpc request method.
      * @return returns reponse string in json format.
      */
-    public Observable<String> getResponse(String url, String request){
+    public static Observable<String> getResponse(String url, String request){
         RetrofitService service = Factory.getRetrofit(url).create(RetrofitService.class);
         return service.getResponse(request);
+    }
+
+    public static Observable<Players> getPlayers(String url, String request){
+        RetrofitService service = Factory.getObjectRetrofit(url).create(RetrofitService.class);
+        return service.getPlayers(request);
+    }
+
+    public static Observable<Music> getMusic(String url, String request){
+        RetrofitService service = Factory.getObjectRetrofit(url).create(RetrofitService.class);
+        return service.getMusic(request);
+    }
+
+    public static Observable<Playlist> getPlaylist(String url, String request){
+        RetrofitService service = Factory.getObjectRetrofit(url).create(RetrofitService.class);
+        return service.getPlaylist(request);
     }
 
 
@@ -54,5 +78,14 @@ public class RetrofitHelper {
          */
         @GET("jsonrpc")
         Observable<String> getResponse(@Query("request") String request);
+
+        @GET("jsonrpc")
+        Observable<Players> getPlayers(@Query("request") String request);
+
+        @GET("jsonrpc")
+        Observable<Music> getMusic(@Query("request") String request);
+
+        @GET("jsonrpc")
+        Observable<Playlist> getPlaylist(@Query("request") String request);
     }
 }

@@ -1,0 +1,105 @@
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.example.micha.remotekodi.remote.RemoteFragment">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Nothing is playing"
+        android:textSize="25sp"
+        android:id="@+id/title"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/backbutton"
+        android:text = "Back"
+        android:onClick="play"
+        app:layout_constraintRight_toLeftOf="@id/playbutton"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/playbutton"
+        android:text="Play"
+        android:tag="Player.PlayPause"
+        android:onClick="play"
+        app:layout_constraintRight_toLeftOf="@id/stopbutton"
+        app:layout_constraintLeft_toRightOf="@id/backbutton"
+        app:layout_constraintTop_toBottomOf="@id/title"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text = "Stop"
+        android:tag="Player.Stop"
+        android:onClick="play"
+        android:id="@+id/stopbutton"
+        app:layout_constraintRight_toLeftOf="@id/nextbutton"
+        app:layout_constraintLeft_toRightOf="@id/playbutton"
+        app:layout_constraintTop_toBottomOf="@id/title"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Next"
+        android:onClick="play"
+        android:id="@+id/nextbutton"
+        app:layout_constraintLeft_toRightOf="@id/stopbutton"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title"/>
+
+    <GridLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:columnCount="3"
+        android:rowCount="3"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:id="@+id/buttons">
+
+        <Button
+            android:onClick="navigate"
+            android:tag="Input.Home"
+            android:text="Home" />
+
+        <Button
+            android:onClick="navigate"
+            android:tag="Input.Up"
+            android:text="Up" />
+
+        <Button
+            android:onClick="navigate"
+            android:tag="Input.Info"
+            android:text="Info" />
+
+        <Button
+            android:onClick="navigate"
+            android:tag="Input.Left"
+            android:text="Left" />
+
+        <Button
+            android:onClick="navigate"
+            android:tag="Input.Select"
+            android:text="Ok" />
+
+        <Button
+            android:onClick="navigate"
+            android:tag="Input.Right"
+            android:text="Right" />
+
+        <Button
+            android:onClick="navigate"
+            android:tag="Input.Back"
+            android:text="Back" />
+
+        <Button
+            android:onClick="navigate"
+            android:tag="Input.Down"
+            android:text="Down" />
+
+        <Button />
+    </GridLayout>
+
+</android.support.constraint.ConstraintLayout >

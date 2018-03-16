@@ -6,5 +6,9 @@
     android:layout_height="match_parent"
     style="@style/Theme.AppCompat.DayNight.NoActionBar"
     tools:context="com.example.micha.remotekodi.control.ControlActivity">
-
+    <android.support.v4.view.ViewPager
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/pages">
+    </android.support.v4.view.ViewPager>
 </android.support.v4.widget.DrawerLayout>

@@ -1,4 +1,4 @@
-package com.example.micha.remotekodi.main.utils;
+package com.example.micha.remotekodi.utils;
 
 /**
  * Builds get requests in jsonrpc format
@@ -24,12 +24,14 @@ public class Request{
             this.methodName = methodName;
         }
 
-        public void addArgs(String...args){
+        public Builder addArgs(String...args){
             this.args = args;
+            return this;
         }
 
-        public void addID(String id){
+        public Builder addID(String id){
             this.id = id;
+            return this;
         }
 
         public Request build(){
@@ -41,7 +43,7 @@ public class Request{
      * Request constructor takes in a static builder object to get values from.
      * @param builder Static builder.
      */
-    public Request(Builder builder) {
+    private Request(Builder builder) {
         methodName = builder.methodName;
         args = builder.args;
         id = builder.id;
